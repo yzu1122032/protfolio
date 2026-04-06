@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="keygame.css" />
+</head>
+
+<body>
+
+    <div class="back">
+        <a href="index.html">Home</a>
+    </div>
+
+    <section class="section title-section">
+        <h1>Key</h1>
+        <p class="subtitle">文字遊戲角色設計</p>
+
+        <div class="tags">
+            <span>Procreate</span>
+        </div>
+
+        <div class="project-info">
+            <p><strong>團隊人數</strong>：6人</p>
+            <p><strong>負責內容</strong>：角色設計</p>
+        </div>
+
+    </section>
+
+    <section class="section cover">
+        <img src="./photo/keygame/keycover.PNG">
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Project Concept</h2>
+        <p>
+            本專案是款文字遊戲，遊戲講訴的是一個女孩人生選擇的故事。她活在一個沒有人情的家，被父親打罵，被母親忽略，過的一個辛苦的人生，到了成年的年紀她終於覺得自己不能再這樣下去所以在一個千年難求的機會她順利的逃出來，從此人生的每一個階段她都要小心選擇。
+        </p>
+        <p>
+            玩家會扮演成這位小女孩來幫她做出人生的選擇，每一個選擇會引來不一樣的結果。
+        </p>
+        <p>
+            遊戲類型：文字劇情 × 青春疼痛 × 戀愛懸疑
+        </p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Artwork</h2>
+
+        <div class="sub-section">
+            <h3 class="sub-title">Character Design</h3>
+
+            <div class="final-main">
+                <img src="photo/keygame/girl.PNG">
+                <img src="photo/keygame/boy.PNG">
+            </div>
+
+            <div class="gallery">
+                <img src="photo/keygame/three.PNG">
+            </div>
+        </div>
+
+        <div class="character-info">
+            <h3 class="sub-title">Character Introduction</h3>
+
+            <div class="character-desc">
+
+                <div class="char-block">
+                    <h4>蘇玥 19歲</h4>
+                    <p>她只想逃離，卻一步步走進另一個牢籠。</p>
+                    <p>在控制與恐懼中長大，她渴望被理解，也害怕被抓住。</p>
+                </div>
+
+                <div class="char-block">
+                    <h4>沈曜 22歲</h4>
+                    <p>溫柔，是他最完美的偽裝。</p>
+                    <p>受雇監視她的人，卻在靠近的過程中，失去了界線。</p>
+                </div>
+
+                <div class="char-block">
+                    <h4>艾晴 19歲</h4>
+                    <p>唯一看見蘇玥、卻被蘇玥推開的人。</p>
+                    <p>真心的關懷，在謊言中逐漸疏遠，她代表那條差點被抓住的救命繩。</p>
+                </div>
+
+                <div class="char-block">
+                    <h4>蘇婉儀 45歲</h4>
+                    <p>「我是為你好。」是她最鋒利的武器。</p>
+                    <p>以愛為名控制一切，她不允許女兒擁有選擇。</p>
+                </div>
+
+                <div class="char-block">
+                    <h4>蘇景森 48歲</h4>
+                    <p>暴力與沉默，是他給家的定義。</p>
+                    <p>用父權與恐懼統治家庭，他的影子，始終追著她。</p>
+                </div>
+
+            </div>
+
+    </section>
+
+    <footer>
+        © 2026 黃麗文
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll(".gallery img, .final-main img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

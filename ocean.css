@@ -1,0 +1,176 @@
+:root {
+  --bg-main: linear-gradient(180deg, #ffffff 0%, #f7f4ef 100%);
+  --text-main: #3a3a3a;
+  --accent: #d6cfc7;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.back {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.back a {
+  text-decoration: none;
+  color: #666;
+}
+
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.title-section {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 32px;
+}
+
+.subtitle {
+  color: #888;
+  margin-top: 10px;
+}
+
+.tags {
+  margin-top: 15px;
+}
+
+.tags span {
+  display: inline-block;
+  background: #f3eaea;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin: 3px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.project-link {
+    display: block;
+    margin: 15px auto 0;
+    padding: 8px 18px;
+    background: var(--accent);
+    border-radius: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #3a3a3a;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.project-link:hover {
+    opacity: 0.7;
+}
+
+.project-info {
+    margin-top: 15px;
+    padding: 12px 16px;
+    background: #ffffffaa;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #555;
+    display: inline-block;
+    line-height: 1.6;
+}
+
+.project-info p {
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 40px 16px;
+  }
+
+  .back {
+    padding: 15px 16px;
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .tags span {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .project-info {
+    display: block;
+    width: 100%;
+    margin: 15px auto 0;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .project-link {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-top: 12px;
+  }
+
+  .section p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery img {
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  footer {
+    padding: 30px;
+    font-size: 11px;
+  }
+}

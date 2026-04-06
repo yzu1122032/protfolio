@@ -1,0 +1,327 @@
+:root {
+    --bg-main: linear-gradient(180deg, #ffffff 0%, #f7f4ef 100%);
+    --text-main: #3a3a3a;
+    --accent: #d6cfc7;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+.back {
+    padding: 20px;
+    font-size: 14px;
+}
+
+.back a {
+    text-decoration: none;
+    color: #666;
+}
+
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.title-section {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #888;
+    margin-top: 10px;
+}
+
+.tags {
+  margin-top: 15px;
+}
+
+.tags span {
+  display: inline-block;
+  background: #f3eaea;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin: 3px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+.image-block {
+    margin-bottom: 30px;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.image-block p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.final-main img {
+    width: 55%;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.cover img {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 16px;
+    /*margin-bottom: 10px;*/
+}
+
+.sub-section {
+    margin-top: 40px;
+}
+
+.sub-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.card-layout {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.card-layout img {
+    flex: 0 0 auto;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.card-layout img:hover {
+    transform: scale(1.05);
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.card-item img {
+    width: 110px;
+    border-radius: 10px;
+    display: block;
+    transition: 0.3s;
+}
+
+.card-name {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+}
+
+.card-item img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.character-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.character-card img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.character-name {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.character-card:hover .character-name {
+    opacity: 1;
+}
+
+.project-info {
+    margin-top: 15px;
+    padding: 12px 16px;
+    background: #ffffffaa;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #555;
+    display: inline-block;
+    line-height: 1.6;
+}
+
+.project-info p {
+    margin: 3px 0;
+}
+
+.card-info {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffffaa;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+
+    .character-name {
+        opacity: 1;  /* 預設顯示名字 */
+    }
+
+    .character-card.active .character-name {
+        opacity: 0;  /* 點擊後顯示圖片 */
+    }
+
+    .card-name {
+        opacity: 1;
+    }
+
+    .card-item.active .card-name {
+        opacity: 0;
+    }
+
+    .section {
+        padding: 40px 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .tags span {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .project-info {
+        display: block;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .cover img {
+        width: 95%;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .section p {
+        font-size: 14px;
+    }
+
+    .card-info {
+        font-size: 13px;
+    }
+
+}
