@@ -205,3 +205,114 @@ footer {
     font-size: 15px;
     color: #333;
 }
+
+/* ==========================================
+   1. YouTube 響應式影片容器 (16:9)
+   ========================================== */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 保持 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================
+   2. 右上角固定式漢堡選單
+   ========================================== */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* 確保在最上層，不被 lightbox 或其他元件遮擋 */
+}
+
+/* 漢堡按鈕圖示 */
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    padding: 5px;
+    box-content: content-box;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-main, #3a3a3a); /* 自動沿用專案的主文字顏色 */
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+/* 點開選單後的動態變形 (三條線變 X) */
+.hamburger-btn.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* 下拉選單選單連結盒 */
+.menu-links {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 160px;
+    display: none;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+}
+
+/* 顯示選單 */
+.menu-links.show {
+    display: flex;
+}
+
+/* 選單內的連結樣式 */
+.menu-links a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-main, #3a3a3a);
+    font-size: 14px;
+    font-family: 'Noto Sans TC', sans-serif;
+    transition: background 0.2s;
+    text-align: left;
+}
+
+.menu-links a:hover {
+    background-color: #f7f4ef; /* 沿用你原本米白色的溫柔調性 */
+    color: #000;
+}
+
+/* RWD 行動端微調：避免在手機上太靠邊緣 */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        top: 15px;
+        right: 15px;
+    }
+}

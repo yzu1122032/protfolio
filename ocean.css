@@ -80,35 +80,35 @@ footer {
 }
 
 .project-link {
-    display: block;
-    margin: 15px auto 0;
-    padding: 8px 18px;
-    background: var(--accent);
-    border-radius: 20px;
-    font-size: 13px;
-    text-decoration: none;
-    color: #3a3a3a;
-    transition: 0.3s;
-    width: fit-content;
+  display: block;
+  margin: 15px auto 0;
+  padding: 8px 18px;
+  background: var(--accent);
+  border-radius: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #3a3a3a;
+  transition: 0.3s;
+  width: fit-content;
 }
 
 .project-link:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .project-info {
-    margin-top: 15px;
-    padding: 12px 16px;
-    background: #ffffffaa;
-    border-radius: 12px;
-    font-size: 13px;
-    color: #555;
-    display: inline-block;
-    line-height: 1.6;
+  margin-top: 15px;
+  padding: 12px 16px;
+  background: #ffffffaa;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #555;
+  display: inline-block;
+  line-height: 1.6;
 }
 
 .project-info p {
-    margin: 3px 0;
+  margin: 3px 0;
 }
 
 @media (max-width: 768px) {
@@ -172,5 +172,305 @@ footer {
   footer {
     padding: 30px;
     font-size: 11px;
+  }
+}
+
+/* ==========================================
+   1. YouTube 響應式影片容器 (16:9)
+   ========================================== */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 保持 16:9 比例 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================
+   2. 右上角固定式漢堡選單
+   ========================================== */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  /* 確保在最上層，不被 lightbox 或其他元件遮擋 */
+}
+
+/* 漢堡按鈕圖示 */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  padding: 5px;
+  box-content: content-box;
+}
+
+.hamburger-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-main, #3a3a3a);
+  /* 自動沿用專案的主文字顏色 */
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+
+/* 點開選單後的動態變形 (三條線變 X) */
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* 下拉選單選單連結盒 */
+.menu-links {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 160px;
+  display: none;
+  flex-direction: column;
+  border: 1px solid #f0f0f0;
+}
+
+/* 顯示選單 */
+.menu-links.show {
+  display: flex;
+}
+
+/* 選單內的連結樣式 */
+.menu-links a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--text-main, #3a3a3a);
+  font-size: 14px;
+  font-family: 'Noto Sans TC', sans-serif;
+  transition: background 0.2s;
+  text-align: left;
+}
+
+.menu-links a:hover {
+  background-color: #f7f4ef;
+  /* 沿用你原本米白色的溫柔調性 */
+  color: #000;
+}
+
+/* ===== Live Demo ===== */
+
+.demo-btn {
+
+  display: block;
+
+  margin: 30px auto 0;
+
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  background: #d8d1c8;
+
+  color: #444;
+
+  transition: .3s;
+}
+
+.demo-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, .08);
+}
+
+/* ===== Modal ===== */
+
+.modal {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, .45);
+
+  backdrop-filter: blur(8px);
+
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+
+  width: 92vw;
+
+  max-width: 1600px;
+
+  height: 90vh;
+
+  background: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, .25);
+
+}
+
+.modal-content iframe {
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+}
+
+.browser-frame {
+
+  width: 100%;
+  height: 100%;
+
+  background: white;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.browser-frame iframe {
+
+  flex: 1;
+
+  width: 100%;
+
+  border: none;
+}
+
+.browser-top {
+
+  height: 50px;
+
+  background: #f7f7f7;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 15px;
+}
+
+.browser-dots {
+
+  display: flex;
+
+  gap: 8px;
+}
+
+.browser-dots span {
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+}
+
+.browser-dots span:nth-child(1) {
+
+  background: #ff5f57;
+}
+
+.browser-dots span:nth-child(2) {
+
+  background: #ffbd2e;
+}
+
+.browser-dots span:nth-child(3) {
+
+  background: #28c840;
+}
+
+.browser-close {
+
+  width: 32px;
+
+  height: 32px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  font-size: 16px;
+
+  color: #666;
+
+  transition: .3s;
+}
+
+.browser-close:hover {
+
+  background: #efefef;
+
+  color: #000;
+
+  transform: rotate(90deg);
+}
+
+/* RWD 行動端微調：避免在手機上太靠邊緣 */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    top: 15px;
+    right: 15px;
   }
 }
